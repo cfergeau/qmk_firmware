@@ -25,6 +25,22 @@ enum planck_keycodes { QWERTY = SAFE_RANGE, DVORAK };
 
 #define ACCENTS LT(8,KC_RALT)
 
+/* Unicode characters */
+#define E_CIRC UP(0x00EA, 0x00CA) /* ê Ê */
+#define A_CIRC UP(0x00E2, 0x00C2) /* â Â */
+#define I_CIRC UP(0x00EE, 0x00CE) /* î Î */
+#define O_CIRC UP(0x00F4, 0x00D4) /* ô Ô */
+#define U_CIRC UP(0x00FB, 0x00DB) /* û Û */
+#define E_DIAE UP(0x00EB, 0x00CB) /* ë Ë */
+#define O_DIAE UP(0x00F6, 0x00D6) /* ö Ö */
+#define U_DIAE UP(0x00FC, 0x00DC) /* û Û */
+#define E_GRAV UP(0x00E8, 0x00C8) /* è È */
+#define E_ACUT UP(0x00E9, 0x00C9) /* é É */
+#define A_GRAV UP(0x00E0, 0x00C0) /* à À */
+#define U_GRAV UP(0x00F9, 0x00D9) /* ù Ù */
+#define C_CEDI UP(0x00E7, 0x00C7) /* ç Ç */
+
+
 /* clang-format off */
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -113,7 +129,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_ACCENTS] = LAYOUT_planck_grid(
     KC_GRV,  KC_SCLN, KC_COMM, KC_DOT,  KC_NO,   KC_NO,   KC_CIRC, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_MINS, KC_EQL,  KC_NO,   KC_NO,   KC_NO,
+    E_ACUT,  E_GRAV,  E_CIRC,  A_GRAV,  A_CIRC,  KC_NO,   KC_NO,   KC_MINS, KC_EQL,  KC_NO,   KC_NO,   KC_NO,
     KC_NO,   KC_QUOT, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
 ),
