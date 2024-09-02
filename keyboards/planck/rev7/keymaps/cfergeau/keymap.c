@@ -23,7 +23,7 @@ enum planck_keycodes { QWERTY = SAFE_RANGE, DVORAK };
 #define LOWER MO(_LOWER)
 #define RAISE MO(_RAISE)
 
-#define ACCENTS LT(8,KC_RALT)
+#define ACCENTS LT(_ACCENTS,KC_RALT)
 
 /* Unicode characters */
 #define E_CIRC UP(0x00EA, 0x00CA) /* ê Ê */
