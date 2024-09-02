@@ -15,6 +15,7 @@
  */
 
 #include QMK_KEYBOARD_H
+#include "unicode-french-accents.h"
 
 enum planck_layers { _QWERTY, _DVORAK, _LOWER, _RAISE, _ACCENTS, _ADJUST };
 
@@ -26,19 +27,23 @@ enum planck_keycodes { QWERTY = SAFE_RANGE, DVORAK };
 #define ACCENTS LT(_ACCENTS,KC_RALT)
 
 /* Unicode characters */
-#define E_CIRC UP(0x00EA, 0x00CA) /* ê Ê */
-#define A_CIRC UP(0x00E2, 0x00C2) /* â Â */
-#define I_CIRC UP(0x00EE, 0x00CE) /* î Î */
-#define O_CIRC UP(0x00F4, 0x00D4) /* ô Ô */
-#define U_CIRC UP(0x00FB, 0x00DB) /* û Û */
-#define E_DIAE UP(0x00EB, 0x00CB) /* ë Ë */
-#define O_DIAE UP(0x00F6, 0x00D6) /* ö Ö */
-#define U_DIAE UP(0x00FC, 0x00DC) /* û Û */
-#define E_GRAV UP(0x00E8, 0x00C8) /* è È */
-#define E_ACUT UP(0x00E9, 0x00C9) /* é É */
-#define A_GRAV UP(0x00E0, 0x00C0) /* à À */
-#define U_GRAV UP(0x00F9, 0x00D9) /* ù Ù */
-#define C_CEDI UP(0x00E7, 0x00C7) /* ç Ç */
+#define A_CIRC UP(A_CIRCUMFLEX_LOWER, A_CIRCUMFLEX_UPPER) /* â Â */
+#define E_CIRC UP(E_CIRCUMFLEX_LOWER, E_CIRCUMFLEX_UPPER) /* ê Ê */
+#define I_CIRC UP(I_CIRCUMFLEX_LOWER, I_CIRCUMFLEX_UPPER) /* î Î */
+#define O_CIRC UP(O_CIRCUMFLEX_LOWER, U_CIRCUMFLEX_UPPER) /* ô Ô */
+#define U_CIRC UP(U_CIRCUMFLEX_LOWER, U_CIRCUMFLEX_UPPER) /* û Û */
+
+#define E_DIAE UP(E_DIAERESIS_LOWER, E_DIAERESIS_UPPER) /* ë Ë */
+#define O_DIAE UP(O_DIAERESIS_LOWER, O_DIAERESIS_UPPER) /* ö Ö */
+#define U_DIAE UP(U_DIAERESIS_LOWER, U_DIAERESIS_UPPER) /* û Û */
+
+#define A_GRAV UP(A_GRAVE_LOWER, A_GRAVE_UPPER) /* à À */
+#define E_GRAV UP(E_GRAVE_LOWER, E_GRAVE_UPPER) /* è È */
+#define U_GRAV UP(U_GRAVE_LOWER, U_GRAVE_UPPER) /* ù Ù */
+
+#define E_ACUT UP(E_ACUTE_LOWER, E_ACUTE_UPPER) /* é É */
+
+#define C_CEDI UP(C_CEDILLA_LOWER, C_CEDILLA_UPPER) /* ç Ç */
 
 
 /* clang-format off */
