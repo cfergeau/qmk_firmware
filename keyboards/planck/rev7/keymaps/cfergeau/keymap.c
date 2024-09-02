@@ -17,6 +17,8 @@
 #include QMK_KEYBOARD_H
 #include "unicode-french-accents.h"
 
+#define UNICODE_SELECTED_MODES UNICODE_MODE_MACOS
+
 enum planck_layers { _QWERTY, _DVORAK, _LOWER, _RAISE, _ACCENTS, _ADJUST };
 
 enum planck_keycodes { QWERTY = SAFE_RANGE, DVORAK };
