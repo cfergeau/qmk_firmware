@@ -24,7 +24,8 @@ enum planck_layers { _QWERTY, _DVORAK, _LOWER, _RAISE, _ACCENTS, _ADJUST };
 enum planck_keycodes { QWERTY = SAFE_RANGE, DVORAK };
 
 #define LOWER MO(_LOWER)
-#define RAISE MO(_RAISE)
+//#define RAISE MO(_RAISE)
+#define RAISE LT(_RAISE, KC_RCTL)
 
 #define ACCENTS LT(_ACCENTS,KC_RCTL)
 
