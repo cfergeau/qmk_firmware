@@ -197,6 +197,19 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LT(_RAISE, KC_RCTL):
+            // KC_RCTL is used as Compose, so it's always pressed on its own,
+            // never in key combinations
+            // Immediately select the hold action when another key is pressed.
+            return true;
+        default:
+            // Do not select the hold action when another key is pressed.
+            return false;
+    }
+}
+
 /* clang-format off */
 float melody[8][2][2] = {
     {{440.0f, 8}, {440.0f, 24}},
