@@ -1,3 +1,5 @@
+#pragma once
+
 enum unicode_names {
     A_CIRCUMFLEX_LOWER,
     A_CIRCUMFLEX_UPPER,
