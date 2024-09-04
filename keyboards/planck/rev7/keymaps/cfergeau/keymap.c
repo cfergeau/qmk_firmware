@@ -48,6 +48,16 @@ enum planck_keycodes { QWERTY = SAFE_RANGE, DVORAK };
 
 #define C_CEDI UP(C_CEDILLA_LOWER, C_CEDILLA_UPPER) /* ç Ç */
 
+/* Tap dance */
+enum {
+  TD_SLSH_PIPE = 0
+};
+
+tap_dance_action_t tap_dance_actions[] = {
+  //Tap once for slash, twice for pipe
+  [TD_SLSH_PIPE]  = ACTION_TAP_DANCE_DOUBLE(KC_SLSH, KC_PIPE)
+};
+
 
 /* clang-format off */
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -83,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_DVORAK] = LAYOUT_planck_grid(
     KC_TAB,  KC_SCLN, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_BSPC,
-    QK_GESC, KC_A,    KC_O,    KC_E,    KC_U,    KC_I,    KC_D,    KC_H,    KC_T,    KC_N,    KC_S,    KC_SLSH,
+    QK_GESC, KC_A,    KC_O,    KC_E,    KC_U,    KC_I,    KC_D,    KC_H,    KC_T,    KC_N,    KC_S,    TD(TD_SLSH_PIPE),
     KC_LSFT, KC_QUOT, KC_Q,    KC_J,    KC_K,    KC_X,    KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_ENT ,
     KC_LCTL, KC_LGUI, KC_LALT, ACCENTS, LOWER,   KC_RSFT, KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
