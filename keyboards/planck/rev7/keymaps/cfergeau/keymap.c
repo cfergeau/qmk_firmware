@@ -27,7 +27,7 @@ enum planck_keycodes { QWERTY = SAFE_RANGE, DVORAK };
 //#define RAISE MO(_RAISE)
 #define RAISE LT(_RAISE, KC_RCTL)
 
-#define ACCENTS LT(_ACCENTS,KC_RCTL)
+#define ACCENTS LT(_ACCENTS, KC_RCTL)
 
 /* Unicode characters */
 #define A_CIRC UP(A_CIRCUMFLEX_LOWER, A_CIRCUMFLEX_UPPER) /* â Â */
@@ -146,9 +146,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_ACCENTS] = LAYOUT_planck_grid(
-    KC_GRV,  KC_SCLN, KC_COMM, KC_DOT,  KC_NO,   KC_NO,   KC_CIRC, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-    E_ACUT,  E_GRAV,  E_CIRC,  A_GRAV,  A_CIRC,  KC_NO,   KC_NO,   KC_MINS, KC_EQL,  KC_NO,   KC_NO,   KC_NO,
-    KC_LSFT, KC_QUOT, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+    KC_GRV,  KC_SCLN, KC_COMM, KC_DOT,  KC_NO,   KC_NO,   KC_CIRC, KC_NO,   A_GRAV,  A_CIRC,  KC_NO,   KC_NO,
+    E_ACUT,  E_GRAV,  E_CIRC,  A_GRAV,  A_CIRC,  KC_NO,   KC_NO,   E_ACUT,  E_GRAV,  E_CIRC,  A_GRAV,  A_CIRC,
+    KC_LSFT, KC_QUOT, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   U_GRAV,  O_CIRC,  KC_NO,   KC_NO,
     KC_RCTL, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
 ),
 
@@ -166,9 +166,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_ADJUST] = LAYOUT_planck_grid(
     _______, QK_BOOT, DB_TOGG, RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD, KC_DEL ,
-    _______, EE_CLR,  MU_NEXT, AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, QWERTY,  _______, DVORAK,  _______, _______,
+    _______, EE_CLR,  MU_NEXT, AU_ON,   AU_OFF,  _______, _______, QWERTY,  _______, DVORAK,  _______, _______,
     _______, AU_PREV, AU_NEXT, MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  UC_MAC,  _______, UC_LINX, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, DT_DOWN, DT_UP,   DT_PRNT
 )
 
 };
