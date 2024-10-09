@@ -16,7 +16,7 @@
 
 #include QMK_KEYBOARD_H
 
-enum planck_layers { _QWERTY, _COLEMAK, _DVORAK, _LOWER, _RAISE, _PLOVER, _ADJUST, _SYMBOLS };
+enum planck_layers { _QWERTY, _COLEMAK, _DVORAK, _LOWER, _RAISE, _PLOVER, _ADJUST, _SYMBOLS, _NAVIGATION };
 
 enum planck_keycodes { QWERTY = SAFE_RANGE, COLEMAK, DVORAK, PLOVER, BACKLIT, EXT_PLV };
 
@@ -170,6 +170,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, KC_EQL,  KC_BSLS, KC_PLUS, KC_MINS, KC_SLSH, KC_DQT,  _______,
     _______, KC_TILD, KC_LBRC, KC_RBRC, KC_UNDS, KC_HASH, KC_PIPE, KC_EXLM, KC_SCLN, KC_COLN, KC_QUES, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+),
+
+/* Navigation layer
+ * ,-----------------------------------------------------------------------------------.
+ * | Tab  |      | Home |  Up  | End  | PgUp |   /  |   7  |   8  |   9  |      | Bksp |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * | Esc  |      | Left | Down |Right | PgDn |   -  |   4  |   5  |   6  |   0  |  '   |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * | Shift|      | Vol- | Mute | Vol+ | Play |   ,  |   1  |   2  |   3  |      |Enter |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * | Brite| Ctrl | Alt  | GUI  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
+ * `-----------------------------------------------------------------------------------'
+ */
+[_NAVIGATION] = LAYOUT_planck_grid(
+    KC_TAB, XXXXXXX,  KC_HOME, KC_UP,   KC_END,  KC_PGUP, KC_SLSH, KC_KP_7, KC_KP_8, KC_KP_9, XXXXXXX, KC_BSPC,
+    KC_ESC, XXXXXXX,  KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, KC_MINS, KC_KP_4, KC_KP_5, KC_KP_6, KC_KP_0, KC_QUOT,
+    KC_LSFT,XXXXXXX,  KC_VOLD, KC_MUTE, KC_VOLU, KC_MPLY, KC_COMM, KC_KP_1, KC_KP_2, KC_KP_3, XXXXXXX, KC_ENT ,
+    BACKLIT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_RSFT, KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 )
 
 };
