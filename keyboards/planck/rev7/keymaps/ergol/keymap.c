@@ -44,6 +44,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     BACKLIT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_RSFT, KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
+[_ERGOL] = LAYOUT_planck_grid(
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______, _______, KC_RALT, _______, _______, _______, _______
+),
+
 /* Colemak
  * ,-----------------------------------------------------------------------------------.
  * | Tab  |   Q  |   W  |   F  |   P  |   G  |   J  |   L  |   U  |   Y  |   ;  | Bksp |
@@ -151,25 +158,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, EE_CLR,  MU_NEXT, AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, QWERTY,  COLEMAK, DVORAK,  PLOVER,  _______,
     _______, AU_PREV, AU_NEXT, MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
-),
-
-/* Ergo-L
- * ,-----------------------------------------------------------------------------------.
- * | Tab  |   Q  |   C  |   O  |   P  |   W  |   J  |   M  |   D  |   *  |   Y  | Bksp |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Esc  |   A  |   S  |   E  |   N  |   F  |   L  |   R  |   T  |   I  |   U  |  /   |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Shift|   Z  |   X  |   -  |   V  |   B  |   .  |   H  |   G  |   ,  |   K  |Enter |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Brite| Ctrl | Alt  | GUI  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
- * `-----------------------------------------------------------------------------------'
- */
-// need to use https://docs.qmk.fm/features/key_overrides for the symbols on this layer
-[_ERGOL] = LAYOUT_planck_grid(
-    KC_TAB,  KC_Q,    KC_C,    KC_O,    KC_P,    KC_W,    KC_J,    KC_M,    KC_D,    KC_ASTR, KC_Y,    KC_BSPC,
-    KC_ESC,  KC_A,    KC_S,    KC_E,    KC_N,    KC_F,    KC_L,    KC_R,    KC_T,    KC_I,    KC_U,    KC_SLSH,
-    KC_LSFT, KC_Z,    KC_X,    KC_MINS, KC_V,    KC_B,    KC_DOT,  KC_H,    KC_G,    KC_COMM, KC_K,    KC_ENT ,
-    BACKLIT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_RSFT, KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 /* Accents (this is the * Ergo-L layer)
