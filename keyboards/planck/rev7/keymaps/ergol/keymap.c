@@ -16,7 +16,7 @@
 
 #include QMK_KEYBOARD_H
 
-enum planck_layers { _QWERTY, _COLEMAK, _DVORAK, _LOWER, _RAISE, _PLOVER, _ADJUST, _ALGOL, _SYMBOLS, _NAVIGATION };
+enum planck_layers { _QWERTY, _COLEMAK, _DVORAK, _LOWER, _RAISE, _PLOVER, _ADJUST, _ERGOL, _ACCENTS, _SYMBOLS, _NAVIGATION };
 
 enum planck_keycodes { QWERTY = SAFE_RANGE, COLEMAK, DVORAK, PLOVER, BACKLIT, EXT_PLV };
 
@@ -153,25 +153,43 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 ),
 
-/* Algo-L
+/* Ergo-L
  * ,-----------------------------------------------------------------------------------.
- * | Tab  |   '  |   ,  |   .  |   P  |   Y  |   F  |   G  |   C  |   R  |   L  | Bksp |
+ * | Tab  |   Q  |   C  |   O  |   P  |   W  |   J  |   M  |   D  |   *  |   Y  | Bksp |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Esc  |   A  |   O  |   E  |   U  |   I  |   D  |   H  |   T  |   N  |   S  |  /   |
+ * | Esc  |   A  |   S  |   E  |   N  |   F  |   L  |   R  |   T  |   I  |   U  |  /   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Shift|   ;  |   Q  |   J  |   K  |   X  |   B  |   M  |   W  |   V  |   Z  |Enter |
+ * | Shift|   Z  |   X  |   -  |   V  |   B  |   .  |   H  |   G  |   ,  |   K  |Enter |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Brite| Ctrl | Alt  | GUI  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
-[_ALGOL] = LAYOUT_planck_grid(
-    KC_TAB,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_BSPC,
-    KC_ESC,  KC_A,    KC_O,    KC_E,    KC_U,    KC_I,    KC_D,    KC_H,    KC_T,    KC_N,    KC_S,    KC_SLSH,
-    KC_LSFT, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,    KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_ENT ,
+// need to use https://docs.qmk.fm/features/key_overrides for the symbols on this layer
+[_ERGOL] = LAYOUT_planck_grid(
+    KC_TAB,  KC_Q,    KC_C,    KC_O,    KC_P,    KC_W,    KC_J,    KC_M,    KC_D,    KC_ASTR, KC_Y,    KC_BSPC,
+    KC_ESC,  KC_A,    KC_S,    KC_E,    KC_N,    KC_F,    KC_L,    KC_R,    KC_T,    KC_I,    KC_U,    KC_SLSH,
+    KC_LSFT, KC_Z,    KC_X,    KC_MINS, KC_V,    KC_B,    KC_DOT,  KC_H,    KC_G,    KC_COMM, KC_K,    KC_ENT ,
     BACKLIT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_RSFT, KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
-/* Symbols (this is the RALT Algo-L layer - instead of having it done through
+/* Accents (this is the * Ergo-L layer)
+ * ,-----------------------------------------------------------------------------------.
+ * | Tab  |   â  |   ç  |   œ  |      |      |      |   µ  |   _  |   ¨  |   û  | Bksp |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * | Esc  |   à  |   é  |   è  |   ê  |      |   (  |   )  |   î  |   ï  |   ù  |  /   |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * | Shift|   æ  |   ß  |   ‑  |   –  |      |  ... |      |      |   .  |      |Enter |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * | Brite| Ctrl | Alt  | GUI  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
+ * `-----------------------------------------------------------------------------------'
+ */
+[_ACCENTS] = LAYOUT_planck_grid(
+    _______, KC_CIRC, KC_LT,   KC_GT,   KC_DLR,  KC_PERC, KC_AT,   KC_AMPR, KC_ASTR, KC_QUOT, KC_GRV,  KC_BSPC,
+    _______, KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, KC_EQL,  KC_BSLS, KC_PLUS, KC_MINS, KC_SLSH, KC_DQT,  _______,
+    _______, KC_TILD, KC_LBRC, KC_RBRC, KC_UNDS, KC_HASH, KC_PIPE, KC_EXLM, KC_SCLN, KC_COLN, KC_QUES, _______,
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+),
+/* Symbols (this is the RALT Ergo-L layer - instead of having it done through
  * an OS keyboard layout, I prefer to have this mapped on the 'raise' key)
  * ,-----------------------------------------------------------------------------------.
  * |      |   ^  |   <  |   >  |   $  |   %  |   @  |   &  |   *  |   '  |   `  | Bksp |
