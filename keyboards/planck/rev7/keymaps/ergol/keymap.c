@@ -15,6 +15,7 @@
  */
 
 #include QMK_KEYBOARD_H
+#include "unicode-french-accents.h"
 
 enum planck_layers { _QWERTY, _COLEMAK, _DVORAK, _LOWER, _RAISE, _PLOVER, _ADJUST, _ERGOL, _ACCENTS, _SYMBOLS, _NAVIGATION, _NAVIM };
 
@@ -166,16 +167,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Esc  |   à  |   é  |   è  |   ê  |      |   (  |   )  |   î  |   ï  |   ù  |  /   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Shift|   æ  |   ß  |   ‑  |   –  |      |  ... |      |      |   .  |      |Enter |
+ * | Shift|   æ  |   ß  |   ‑  |   –  |      |   …  |      |      |   .  |      |Enter |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Brite| Ctrl | Alt  | GUI  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
 [_ACCENTS] = LAYOUT_planck_grid(
-    _______, KC_CIRC, KC_LT,   KC_GT,   KC_DLR,  KC_PERC, KC_AT,   KC_AMPR, KC_ASTR, KC_QUOT, KC_GRV,  KC_BSPC,
-    _______, KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, KC_EQL,  KC_BSLS, KC_PLUS, KC_MINS, KC_SLSH, KC_DQT,  _______,
-    _______, KC_TILD, KC_LBRC, KC_RBRC, KC_UNDS, KC_HASH, KC_PIPE, KC_EXLM, KC_SCLN, KC_COLN, KC_QUES, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+    _______, A_CIRC, C_CEDI, OE,     XXXXXXX,XXXXXXX, XXXXXXX, MU,      KC_UNDS,KC_QUOT, U_CIRC, KC_BSPC,
+    _______, A_GRAV, E_ACUT, E_GRAV, E_CIRC, XXXXXXX, KC_LPRN, KC_RPRN, I_CIRC, I_DIAE,  U_GRAV, KC_BSLS,
+    _______, AE,     BETA,   KC_MINS,LNGDASH,XXXXXXX, THRDOTS, XXXXXXX, XXXXXXX, KC_DOT, XXXXXXX, KC_ENT,
+    _______, _______,_______,_______,_______,_______, _______, _______, _______, _______,_______, _______
 ),
 /* Symbols (this is the RALT Ergo-L layer - instead of having it done through
  * an OS keyboard layout, I prefer to have this mapped on the 'raise' key)
