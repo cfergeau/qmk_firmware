@@ -16,12 +16,14 @@
 
 #include QMK_KEYBOARD_H
 
-enum planck_layers { _QWERTY, _DVORAK, _LOWER, _RAISE, _ADJUST };
+enum planck_layers { _QWERTY, _DVORAK, _LOWER, _RAISE, _ADJUST, _NAVIM };
 
 enum planck_keycodes { QWERTY = SAFE_RANGE, DVORAK };
 
 #define LOWER MO(_LOWER)
 #define RAISE MO(_RAISE)
+
+#define SPC_NAV LT(_NAVIM, KC_SPC)
 
 /* clang-format off */
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -41,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
     KC_ESC,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT ,
-    KC_RSFT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_RSFT, KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    KC_RSFT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_RSFT, SPC_NAV, RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 /* Dvorak
@@ -59,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_BSPC,
     KC_ESC,  KC_A,    KC_O,    KC_E,    KC_U,    KC_I,    KC_D,    KC_H,    KC_T,    KC_N,    KC_S,    KC_SLSH,
     KC_LSFT, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,    KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_ENT ,
-    KC_RSFT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_RSFT, KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    KC_RSFT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_RSFT, SPC_NAV, RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 /* Lower
@@ -115,6 +117,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, EE_CLR,  MU_NEXT, AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, QWERTY,  XXXXXXX, DVORAK,  _______, _______,
     _______, AU_PREV, AU_NEXT, MU_ON,   MU_OFF,  _______, _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+),
+
+/* Navigation/vim layer
+ * ,-----------------------------------------------------------------------------------.
+ * | Tab  |      |   7  |   8  |   9  |      |      | Home | PgDn | PgUp | End  | Bksp |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * | Esc  |   0  |   4  |   5  |   6  |   0  |      | Left | Down |  Up  |Right |  '   |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * | Shift|      |   1  |   2  |   3  |      |      |      |      |      |      |Enter |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |RShift| Ctrl | Alt  | GUI  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
+ * `-----------------------------------------------------------------------------------'
+ */
+[_NAVIM] = LAYOUT_planck_grid(
+    KC_TAB,  XXXXXXX, KC_7,    KC_8,    KC_9,  XXXXXXX, XXXXXXX, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_BSPC,
+    KC_ESC,  KC_0,    KC_4,    KC_5,    KC_6,  KC_0,    XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_QUOT,
+    KC_LSFT, XXXXXXX, KC_1,    KC_2,    KC_3,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_ENT ,
+    KC_RSFT, KC_LCTL, KC_LALT, KC_LGUI, LOWER, XXXXXXX, KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 )
 
 };
