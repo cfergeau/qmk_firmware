@@ -64,14 +64,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   /  |Enter |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |RShift| Ctrl | Alt  | GUI  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
+ * | Ctrl | GUI  | Alt  | Ralt |Lower |    Space    |Raise | Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
 [_QWERTY] = LAYOUT_planck_grid(
     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
     CTL_ESC, GUI_A,   ALT_S,   SFT_D,   CTL_F,   KC_G,    KC_H,    CTL_J,   SFT_K,   ALT_L,   GUI_SCLN,KC_QUOT,
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT ,
-    KC_RSFT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_RSFT, SPC_NAV, RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    KC_LCTL, KC_LGUI, KC_LALT, KC_RALT, LOWER,   KC_RSFT, SPC_NAV, RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 /* Dvorak
@@ -82,14 +82,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Shift|   ;  |   Q  |   J  |   K  |   X  |   B  |   M  |   W  |   V  |   Z  |Enter |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |RShift| Ctrl | Alt  | GUI  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
+ * | Ctrl | GUI  | Alt  | Ralt |Lower |    Space    |Raise | Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
 [_DVORAK] = LAYOUT_planck_grid(
     KC_TAB,  KC_SCLN, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_BSPC,
     CTL_ESC, GUI_A,   ALT_O,   SFT_E,   CTL_U,   KC_I,    KC_D,    CTL_H,   SHFT_T,  ALT_N,   GUI_S,   KC_SLSH,
     KC_LSFT, KC_QUOT, KC_Q,    KC_J,    KC_K,    KC_X,    KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_ENT ,
-    KC_RSFT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_RSFT, SPC_NAV, RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    KC_LCTL, KC_LGUI, KC_LALT, KC_RALT, LOWER,   KC_RSFT, SPC_NAV, RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 /* Lower
