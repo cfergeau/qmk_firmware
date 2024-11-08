@@ -17,9 +17,9 @@
 #include QMK_KEYBOARD_H
 #include "unicode-french-accents.h"
 
-enum planck_layers { _QWERTY, _DVORAK, _LOWER, _RAISE, _ADJUST, _NAVIM, _ACCENTS };
+enum planck_layers { _QWERTY, _ERGOL, _DVORAK, _LOWER, _RAISE, _ADJUST, _NAVIM, _ACCENTS };
 
-enum planck_keycodes { QWERTY = SAFE_RANGE, DVORAK };
+enum planck_keycodes { QWERTY = SAFE_RANGE, DVORAK, ERGOL };
 
 #define LOWER MO(_LOWER)
 #define RAISE MO(_RAISE)
@@ -75,6 +75,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     CTL_ESC, GUI_A,   ALT_S,   SFT_D,   CTL_F,   KC_G,    KC_H,    CTL_J,   SFT_K,   ALT_L,   GUI_SCLN,KC_QUOT,
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT ,
     KC_LCTL, KC_LGUI, KC_LALT, ACCENTS, LOWER,   KC_RSFT, SPC_NAV, RSE_COMP,KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+),
+
+[_ERGOL] = LAYOUT_planck_grid(
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, RAISE,   _______, _______, _______, KC_RALT, _______, _______, _______, _______
 ),
 
 /* Dvorak
@@ -149,7 +156,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_ADJUST] = LAYOUT_planck_grid(
     _______, QK_BOOT, DB_TOGG, UG_TOGG, UG_NEXT, UG_HUEU, UG_HUED, UG_SATU, UG_SATD, UG_SPDU, UG_SPDD, KC_DEL ,
-    _______, EE_CLR,  MU_NEXT, AU_ON,   AU_OFF,  _______, _______, QWERTY,  XXXXXXX, DVORAK,  _______, _______,
+    _______, EE_CLR,  MU_NEXT, AU_ON,   AU_OFF,  _______, _______, QWERTY,  ERGOL,   DVORAK,  _______, _______,
     _______, AU_PREV, AU_NEXT, MU_ON,   MU_OFF,  _______, _______, UC_PREV, UC_NEXT, UC_LINX, _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 ),
@@ -211,6 +218,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case DVORAK:
             if (record->event.pressed) {
                 set_single_persistent_default_layer(_DVORAK);
+            }
+            return false;
+            break;
+        case ERGOL:
+            if (record->event.pressed) {
+                set_single_persistent_default_layer(_ERGOL);
             }
             return false;
             break;

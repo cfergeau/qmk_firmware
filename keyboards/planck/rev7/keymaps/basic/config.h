@@ -20,8 +20,9 @@
 #    define STARTUP_SONG SONG(PLANCK_SOUND)
 // #define STARTUP_SONG SONG(NO_SOUND)
 
+#    define ERGOL_SOUND WORKMAN_SOUND
 #    define DEFAULT_LAYER_SONGS \
-        { SONG(QWERTY_SOUND), SONG(DVORAK_SOUND) }
+        { SONG(QWERTY_SOUND), SONG(ERGOL_SOUND), SONG(DVORAK_SOUND) }
 #endif
 
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
