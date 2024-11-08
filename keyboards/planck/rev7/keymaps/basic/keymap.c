@@ -119,7 +119,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Update: Will use OS-level keymaps instead as they are a lot more flexible
  * (eg altgr + shift gives dead keys for intl accents)
  * ,-----------------------------------------------------------------------------------.
- * |      |   ^  |   <  |   >  |   $  |   %  |   @  |   &  |   *  |   '  |   `  | Bksp |
+ * |   `  |   ^  |   <  |   >  |   $  |   %  |   @  |   &  |   *  |   '  |   `  | Bksp |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |   {  |   (  |   )  |   }  |   =  |   \  |   +  |   -  |   /  |   "  |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -129,7 +129,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_RAISE] = LAYOUT_planck_grid(
-    _______, KC_CIRC, KC_LT,   KC_GT,   KC_DLR,  KC_PERC, KC_AT,   KC_AMPR, KC_ASTR, KC_QUOT, KC_GRV,  KC_BSPC,
+    KC_GRV,  KC_CIRC, KC_LT,   KC_GT,   KC_DLR,  KC_PERC, KC_AT,   KC_AMPR, KC_ASTR, KC_QUOT, KC_GRV,  KC_BSPC,
     _______, KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, KC_EQL,  KC_BSLS, KC_PLUS, KC_MINS, KC_SLSH, KC_DQT,  _______,
     SFT_RALT,KC_TILD, KC_LBRC, KC_RBRC, KC_UNDS, KC_HASH, KC_PIPE, KC_EXLM, KC_SCLN, KC_COLN, KC_QUES, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
