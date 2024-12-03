@@ -41,7 +41,7 @@ enum planck_keycodes { QWERTY = SAFE_RANGE, DVORAK, ERGOL };
 #define CTL_J LCTL_T(KC_J) // RCTL is Compose, use LCTL to get Control
 #define SFT_K RSFT_T(KC_K)
 #define ALT_L LALT_T(KC_L)
-#define GUI_SCLN RGUI_T(KC_SCLN)
+#define GUI_SCLN LGUI_T(KC_SCLN)
 
 // Dvorak
 // Left-hand home row mods
@@ -54,7 +54,7 @@ enum planck_keycodes { QWERTY = SAFE_RANGE, DVORAK, ERGOL };
 #define CTL_H LCTL_T(KC_H)
 #define SHFT_T RSFT_T(KC_T)
 #define ALT_N LALT_T(KC_N)
-#define GUI_S RGUI_T(KC_S)
+#define GUI_S LGUI_T(KC_S)
 
 /* clang-format off */
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
