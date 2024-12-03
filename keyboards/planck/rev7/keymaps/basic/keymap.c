@@ -171,14 +171,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Shift|   ,  |   1  |   2  |   3  |   .  | Home | PgDn | PgUp | End  | Del  |Enter |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |RShift| Ctrl | Alt  | GUI  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
+ * |RShift| Ctrl | Alt  | GUI  |Lower |    Space    |LLock | Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
 [_NAVIM] = LAYOUT_planck_grid(
     KC_GRV,  KC_DLR,  KC_7,    KC_8,    KC_9,  XXXXXXX, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_DEL,  KC_BSPC,
     KC_ESC,  KC_0,    KC_4,    KC_5,    KC_6,  KC_0,    KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_BSPC, KC_QUOT,
     KC_LSFT, KC_COMM, KC_1,    KC_2,    KC_3,  KC_DOT,  KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_DEL,  KC_ENT ,
-    KC_RSFT, KC_LCTL, KC_LALT, KC_LGUI, LOWER, XXXXXXX, KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    KC_RSFT, KC_LCTL, KC_LALT, KC_LGUI, LOWER, XXXXXXX, KC_SPC,  QK_LLCK, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 /* Accents (this is the * Ergo-L layer)
