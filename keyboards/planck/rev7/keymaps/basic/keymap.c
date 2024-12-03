@@ -167,7 +167,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Esc  |   0  |   4  |   5  |   6  |   0  |      | Left | Down |  Up  |Right |  '   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Shift|      |   1  |   2  |   3  |      |      |      |      |      |      |Enter |
+ * | Shift|      |   1  |   2  |   3  |      |      | Home | PgDn | PgUp | End  |Enter |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |RShift| Ctrl | Alt  | GUI  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
@@ -175,7 +175,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_NAVIM] = LAYOUT_planck_grid(
     KC_TAB,  XXXXXXX, KC_7,    KC_8,    KC_9,  XXXXXXX, XXXXXXX, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_BSPC,
     KC_ESC,  KC_0,    KC_4,    KC_5,    KC_6,  KC_0,    XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_QUOT,
-    KC_LSFT, XXXXXXX, KC_1,    KC_2,    KC_3,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_ENT ,
+    KC_LSFT, XXXXXXX, KC_1,    KC_2,    KC_3,  XXXXXXX, XXXXXXX, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  KC_ENT ,
     KC_RSFT, KC_LCTL, KC_LALT, KC_LGUI, LOWER, XXXXXXX, KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
