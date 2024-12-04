@@ -27,3 +27,6 @@
 
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 #define QUICK_TAP_TERM 0
+
+//Activate CapsWord by double tapping Left Shift
+#define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
