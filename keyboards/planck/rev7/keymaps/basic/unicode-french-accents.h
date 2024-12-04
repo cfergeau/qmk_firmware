@@ -28,6 +28,7 @@
 #define MU UP(MU_LOWER, MU_UPPER) /* µ M */
 #define THRDOTS UM(THREEDOTS) /* … */
 #define LNGDASH UM(ENDASH) /* – */
+#define EURO UM(EURO_SIGN)
 
 enum unicode_names {
     A_CIRCUMFLEX_LOWER,
@@ -77,7 +78,9 @@ enum unicode_names {
 
     THREEDOTS,
 
-    ENDASH
+    ENDASH,
+
+    EURO_SIGN
 };
 
 const uint32_t PROGMEM unicode_map[] = {
@@ -128,5 +131,7 @@ const uint32_t PROGMEM unicode_map[] = {
 
     [THREEDOTS] = 0x2026,
 
-    [ENDASH] = 0x2013
+    [ENDASH] = 0x2013,
+
+    [EURO_SIGN] = 0x20AC
 };
