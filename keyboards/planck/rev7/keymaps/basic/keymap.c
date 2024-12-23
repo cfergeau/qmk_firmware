@@ -286,3 +286,5 @@ uint32_t reset_note(uint32_t trigger_time, void *note) {
     *(float*)note = 440.0f;
     return 0;
 }
+
+#include "keymap-user.c"
