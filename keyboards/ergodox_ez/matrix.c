@@ -164,7 +164,7 @@ static matrix_row_t read_cols(uint8_t row) {
  *
  * Teensy
  * row: 7   8   9   10  11  12  13
- * pin: B0  B1  B2  B3  D2  D3  C6
+ * pin: B0  B1  B2  B3  C7  D3  C6
  *
  * MCP23018
  * row: 0   1   2   3   4   5   6
@@ -180,7 +180,7 @@ static void unselect_rows(void) {
     gpio_set_pin_input(B1);
     gpio_set_pin_input(B2);
     gpio_set_pin_input(B3);
-    gpio_set_pin_input(D2);
+    gpio_set_pin_input(C7);
     gpio_set_pin_input(D3);
     gpio_set_pin_input(C6);
 }
@@ -216,8 +216,8 @@ static void select_row(uint8_t row) {
                 gpio_write_pin_low(B3);
                 break;
             case 11:
-                gpio_set_pin_output(D2);
-                gpio_write_pin_low(D2);
+                gpio_set_pin_output(C7);
+                gpio_write_pin_low(C7);
                 break;
             case 12:
                 gpio_set_pin_output(D3);
