@@ -30,3 +30,11 @@
 
 //Activate CapsWord by double tapping Left Shift
 #define DOUBLE_TAP_SHIFT_TURNS_ON_CAPS_WORD
+
+// Built-in tristate feature
+#define LOWER_IDX 3
+#define UPPER_IDX 4
+#define ADJUST_IDX 5
+#define TRI_LAYER_LOWER_LAYER LOWER_IDX
+#define TRI_LAYER_UPPER_LAYER UPPER_IDX
+#define TRI_LAYER_ADJUST_LAYER ADJUST_IDX
